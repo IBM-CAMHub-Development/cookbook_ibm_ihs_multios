@@ -1,0 +1,390 @@
+{
+    "ihs": {
+        "admin_server": {
+            "document_root": {
+                "default": "/opt/IBM/HTTPServer/docroot",
+                "description": "IHS Admin Server Docuement Root",
+                "displayname": "IHS_Admin_Server_DocRoot",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "enabled": {
+                "default": "false",
+                "description": "IHS Admin Server Enable(true/false)",
+                "displayname": "IHS_Admin_Server_Enable",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "password": {
+                "default": "",
+                "description": "IHS Admin Server Password",
+                "displayname": "IHS_Admin_Server_Password",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "true",
+                "selectable": "false",
+                "type": "string"
+            },
+            "port": {
+                "default": "8008",
+                "description": "IHS Admin Server  Port Number",
+                "displayname": "IHS_Admin_Server_port_number",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "server_name": {
+                "default": "",
+                "description": "IHS Admin Server Docuement Hostname",
+                "displayname": "IHS_Admin_Server_hostname",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "service_name": {
+                "default": "ihsadm",
+                "description": "IHS Admin Server ServiceName",
+                "displayname": "IHS_Admin_Server_Servicename",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "username": {
+                "default": "ihsadmin",
+                "description": "IHS Admin Server userName",
+                "displayname": "IHS_Admin_Server_UserName",
+                "parm_type": "node",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            }
+        },
+        "config_os_service": {
+            "default": "true",
+            "description": "IHS Server Config Service",
+            "displayname": "IHS_Config_service",
+            "parm_type": "none",
+            "precedence_level": "node",
+            "required": "recommended",
+            "secret": "false",
+            "selectable": "false",
+            "type": "string"
+        },
+        "document_root": {
+            "default": "/opt/IBM/HTTPServer/htdocs",
+            "description": "IHS Server DocumentRoot",
+            "displayname": "IHS_Server_DocRoot",
+            "parm_type": "none",
+            "precedence_level": "node",
+            "required": "recommended",
+            "secret": "false",
+            "selectable": "false",
+            "type": "string"
+        },
+        "features": {
+            "bitness": {
+                "default": "64",
+                "description": "IHS Server BIT 64",
+                "displayname": "IHS_Server_64_bit",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            }
+        },
+        "install_dir": {
+            "default": "/opt/IBM/HTTPServer",
+            "description": "IHS Installation Directory",
+            "displayname": "IHS_Install_Directory",
+            "parm_type": "none",
+            "precedence_level": "node",
+            "required": "recommended",
+            "secret": "false",
+            "selectable": "false",
+            "type": "string"
+        },
+        "install_mode": {
+            "default": "nonAdmin",
+            "description": "IHS Installation Mode",
+            "displayname": "IHS_Install_mode",
+            "parm_type": "none",
+            "precedence_level": "node",
+            "required": "recommended",
+            "secret": "false",
+            "selectable": "false",
+            "type": "string"
+        },
+        "os_perms": {
+            "default": "755",
+            "description": "IHS File Permissions",
+            "displayname": "IHS_File_Permissions",
+            "parm_type": "none",
+            "precedence_level": "node",
+            "required": "recommended",
+            "secret": "false",
+            "selectable": "false",
+            "type": "string"
+        },
+        "os_users": {
+            "ihs": {
+                "gid": {
+                    "default": "ihsgrp",
+                    "description": "IHS Server OS User GROUP Name",
+                    "displayname": "IHS_Server_OS_User_GROUP",
+                    "parm_type": "none",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "secret": "false",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "home": {
+                    "default": "/home/ihssrv",
+                    "description": "IHS Server OS User Home Direcrtory",
+                    "displayname": "IHS_Server_OS_User_HomeDir",
+                    "parm_type": "none",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "secret": "false",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "ldap_user": {
+                    "default": "false",
+                    "description": "IHS Server OS User LDAP Enabled",
+                    "displayname": "IHS_Server_OS_User_LDAP",
+                    "parm_type": "none",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "secret": "false",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "name": {
+                    "default": "ihssrv",
+                    "description": "IHS Server OS User Name",
+                    "displayname": "IHS_Server_OS_User",
+                    "parm_type": "none",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "secret": "false",
+                    "selectable": "false",
+                    "type": "string"
+                },
+                "shell": {
+                    "default": "/sbin/nologin",
+                    "description": "IHS Server OS User Shell",
+                    "displayname": "IHS_Server_OS_User_Shell",
+                    "parm_type": "none",
+                    "precedence_level": "node",
+                    "required": "recommended",
+                    "secret": "false",
+                    "selectable": "false",
+                    "type": "string"
+                }
+            }
+        },
+        "plugin": {
+            "dmgr_tag": {
+                "default": "DMGR",
+                "description": "IHS Plugin DMGR Tag",
+                "displayname": "IHS_Plugin_DMGR_TAG",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "enabled": {
+                "default": "remote",
+                "description": "IHS Plugin Enabled",
+                "displayname": "IHS_Plugin_Enabled",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "install_dir": {
+                "default": "/opt/IBM/WebSphere/Plugins",
+                "description": "IHS Plugin Installation Direcrtory",
+                "displayname": "IHS_Plugin_InstallDir",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "plugin_install_type": {
+                "default": "remote",
+                "description": "IHS Plugin INstallation Type",
+                "displayname": "IHS_Plugin_Install_type",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "was_hostname": {
+                "default": "",
+                "description": "IHS Plugin DMGR_Hostname",
+                "displayname": "IHS_Plugin_DMGR_Hostanme",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "was_webserver_name": {
+                "default": "",
+                "description": "IHS Plugin WEBSRV_Hostname",
+                "displayname": "IHS_Plugin_WEBSRV_Hostname",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            }
+        },
+        "port": {
+            "default": "80",
+            "description": "IHS Server Port Number",
+            "displayname": "IHS_Server_Port",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "secret": "false",
+            "selectable": "false",
+            "type": "string"
+        },
+        "server_admin": {
+            "default": "",
+            "description": "IHS Server Admin Email Address",
+            "displayname": "IHS_Server_Email",
+            "parm_type": "none",
+            "precedence_level": "node",
+            "required": "recommended",
+            "secret": "false",
+            "selectable": "false",
+            "type": "string"
+        },
+        "server_name": {
+            "default": "",
+            "description": "IHS Server Admin ServerName",
+            "displayname": "IHS_Server_Name",
+            "parm_type": "none",
+            "precedence_level": "node",
+            "required": "recommended",
+            "secret": "false",
+            "selectable": "false",
+            "type": "string"
+        },
+        "service_name": {
+            "default": "ihssrv",
+            "description": "IHS Server Service Name",
+            "displayname": "IHS_Server_ServiceName",
+            "parm_type": "none",
+            "precedence_level": "node",
+            "required": "recommended",
+            "secret": "false",
+            "selectable": "false",
+            "type": "string"
+        },
+        "ssl": {
+            "cert_label": {
+                "default": "",
+                "description": "IHS Keystore Label Name",
+                "displayname": "IHS_Keystore_Label_Name",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "enabled": {
+                "default": "false",
+                "description": "IHS Enable SSL Port",
+                "displayname": "IHS_Enable_SSL",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "keystore": {
+                "default": "/opt/IBM/HTTPServer/conf/key.kdb",
+                "description": "IHS Keystore Location",
+                "displayname": "IHS_Keystore_Location",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            },
+            "keystore_password": {
+                "default": "",
+                "description": "IHS Keystore Password",
+                "displayname": "IHS_Keystore_Password",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "true",
+                "selectable": "false",
+                "type": "string"
+            },
+            "port": {
+                "default": "443",
+                "description": "IHS SSL Port Number",
+                "displayname": "IHS_SSL_Port_Number",
+                "parm_type": "none",
+                "precedence_level": "node",
+                "required": "recommended",
+                "secret": "false",
+                "selectable": "false",
+                "type": "string"
+            }
+        },
+        "version": {
+            "default": "",
+            "description": "IHS Installation Version",
+            "displayname": "IHS_Install_Version",
+            "parm_type": "node",
+            "precedence_level": "node",
+            "required": "recommended",
+            "secret": "false",
+            "selectable": "false",
+            "type": "string"
+        }
+    }
+}
