@@ -6,11 +6,11 @@
   "default_attributes": {
     "ibm": {
       "im_repo": "",
-      "sw_repo_root": "",
+      "sw_repo": "",
       "im_repo_user": "repouser",
       "im_repo_password": "",
-      "repo_user": "repouser",
-      "repo_password": ""
+      "sw_repo_user": "repouser",
+      "sw_repo_password": ""
     },
     "ihs": {
       "admin_server": {

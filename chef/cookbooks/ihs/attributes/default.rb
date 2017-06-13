@@ -9,16 +9,16 @@
 #-------------------------------------------------------------------------------
 
 # <> Software repo that contains binaries. Passed from environment/role.
-default['ibm']['sw_repo_root'] = ''
+default['ibm']['sw_repo'] = ''
 
 # <> User for secure SW repo
-default['ibm']['repo_user'] = ''
+default['ibm']['sw_repo_user'] = ''
 
 # <> Vault password for SW repo user
-default['ibm']['repo_password'] = ''
+default['ibm']['sw_repo_password'] = ''
 
 # <> IM repository location
-default['ibm']['im_repo'] = node['ibm']['sw_repo_root'] + '/IMRepo'
+default['ibm']['im_repo'] = node['ibm']['sw_repo'] + '/IMRepo'
 
 # <> User for secure IM repo
 default['ibm']['im_repo_user'] = ''

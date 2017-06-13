@@ -5,9 +5,9 @@
                 "im_repo": "",
                 "im_repo_password": "",
                 "im_repo_user": "repouser",
-                "repo_password": "",
-                "repo_user": "repouser",
-                "sw_repo_root": ""
+                "sw_repo": "",
+                "sw_repo_password": "",
+                "sw_repo_user": "repouser"
             },
             "ihs": {
                 "admin_server": {
@@ -40,9 +40,9 @@
                 "im_repo": "",
                 "im_repo_password": "",
                 "im_repo_user": "repouser",
-                "repo_password": "",
-                "repo_user": "repouser",
-                "sw_repo_root": ""
+                "sw_repo": "",
+                "sw_repo_password": "",
+                "sw_repo_user": "repouser"
             },
             "ihs": {
                 "admin_server": {
