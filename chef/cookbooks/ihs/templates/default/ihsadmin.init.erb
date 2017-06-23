@@ -118,7 +118,6 @@ stop() {
 
 status() {
   local isrunning=0
-  set -o pipefail
   # Try server-status page first
   if /usr/bin/curl "http://127.0.0.1:<%= @IHSPORT %>/server-status" 2>&1 | grep "403 Forbidden" >/dev/null; then
     [ "$1" != "silent" ] && echo "${SERVICENAME} is running on port <%= @IHSPORT %>"

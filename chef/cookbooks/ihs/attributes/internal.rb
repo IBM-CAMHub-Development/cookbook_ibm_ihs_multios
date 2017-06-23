@@ -4,7 +4,7 @@
 # Copyright IBM Corp. 2016, 2017
 #
 case node['platform_family']
-when 'rhel'
+when 'rhel', 'debian'
   # <> An absolute path to a directory that will be used to hold any temporary files created as part of the automation
   default['ibm']['temp_dir'] = '/tmp/ibm_cloud'
   # <> An absolute path to a directory that will be used to hold any persistent files created as part of the automation
@@ -80,7 +80,12 @@ force_default['ihs']['expand_area'] = node['ibm']['expand_area'] + '/' + 'ihs'
 force_default['ihs']['log_dir'] = node['ibm']['log_dir'] + '/' + 'ihs'
 
 # <> Prerequisite packages
-force_default['ihs']['prereqs'] = ['curl', 'iproute']
+case node['platform_family']
+when 'rhel'
+  force_default['ihs']['prereqs'] = ['curl', 'iproute']
+when 'debian'
+  force_default['ihs']['prereqs'] = ['curl', 'iproute2']
+end
 
 # <> IM Offering ID's for webserver and WAS plugin
 # force_default['ihs']['offering_id'] = {

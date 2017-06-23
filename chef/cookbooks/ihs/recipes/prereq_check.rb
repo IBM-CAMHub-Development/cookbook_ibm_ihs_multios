@@ -12,8 +12,11 @@ ibm_cloud_utils_hostsfile_update 'update_the_etc_hosts_file' do
   action :updateshosts
 end
 
-ibm_cloud_utils_enable_awsyumrepo 'enable_aws_extra_yumrepo' do
-  action :enable
+case node['platform_family']
+when 'rhel'
+  ibm_cloud_utils_enable_awsyumrepo 'enable_aws_extra_yumrepo' do
+    action :enable
+  end
 end
 
 if node['ihs']['port'].to_i < 1024 && node['ihs']['install_mode'] != 'admin'
