@@ -15,9 +15,9 @@
 </server>
 
 <install modify='false'>
-<offering id='<%= @OFFERING_ID %>' version='<%= @OFFERING_VERSION %>' profile='<%= @PROFILE_ID %>' features='<%= @FEATURE_LIST %>' installFixes='none'/>
+<offering id='<%= @OFFERING_ID %>' version='<%= @OFFERING_VERSION %>' profile='<%= @PROFILE_ID %>' features='<%= @FEATURE_LIST %>' installFixes='recommended'/>
 <% if node['ihs']['version'].split('.').first.to_i >= 9 %>
-<offering id='com.ibm.java.jdk.v8' profile='<%= @PROFILE_ID %>' features='com.ibm.sdk.8' installFixes='none'/>
+<offering id='com.ibm.java.jdk.v8' profile='<%= @PROFILE_ID %>' features='com.ibm.sdk.8' installFixes='recommended'/>
 <% end %>
 </install>
 
@@ -25,9 +25,6 @@
 <data key='eclipseLocation' value='<%= @INSTALL_LOCATION %>'/>
 <data key='user.import.profile' value='false'/>
 <data key='cic.selector.nl' value='en'/>
-<!-- TODO update for version > 8.5.5.11, java6 or java8
-<data key='user.wasjava' value='@JAVA_VERSION'/>
--->
 <% if @OFFERING_ID.include? "IHS" %>
 <data key='user.ihs.httpPort' value='<%= node['ihs']['port'].to_i %>'/>
 <data key='user.ihs.allowNonRootSilentInstall' value='true'/>
