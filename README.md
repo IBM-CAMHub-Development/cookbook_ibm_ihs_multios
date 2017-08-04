@@ -105,6 +105,16 @@ Attributes
     <td><code>nonAdmin</code></td>
   </tr>
   <tr>
+    <td><code>node['ihs']['java']['legacy']</code></td>
+    <td>IHS v85 Java Version</td>
+    <td><code>java8</code></td>
+  </tr>
+  <tr>
+    <td><code>node['ihs']['java']['version']</code></td>
+    <td>IHS v9 Java version</td>
+    <td><code>8.0.4.1</code></td>
+  </tr>
+  <tr>
     <td><code>node['ihs']['os_perms']</code></td>
     <td>IHS File Permissions</td>
     <td><code>755</code></td>
@@ -116,12 +126,12 @@ Attributes
   </tr>
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['home']</code></td>
-    <td>IHS Server OS User Home Direcrtory</td>
-    <td><code>/home/ihssrv</code></td>
+    <td>IHS Server OS User Home Directory</td>
+    <td><code>default</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['ldap_user']</code></td>
-    <td>IHS Server OS User LDAP Enabled</td>
+    <td>IHS Server OS User is defined in LDAP</td>
     <td><code>false</code></td>
   </tr>
   <tr>
@@ -162,7 +172,7 @@ Attributes
   <tr>
     <td><code>node['ihs']['plugin']['was_webserver_name']</code></td>
     <td>IHS Plugin WEBSRV_Hostname</td>
-    <td><code></code></td>
+    <td><code>webserver1</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['port']</code></td>

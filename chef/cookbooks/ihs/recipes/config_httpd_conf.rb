@@ -23,7 +23,7 @@ template "#{node['ihs']['install_dir']}/conf/httpd.conf" do
     :SERVERROOT => node['ihs']['install_dir']
   )
   notifies :write, 'log[Restarting httpd]', :immediately
-  not_if { node['ihs']['admin_server']['enabled'].to_s == 'true' && !ihs_first_run? }
+  not_if { node['ihs']['plugin']['enabled'].to_s == 'true' && !ihs_first_run? }
 end
 
 # Notify service, except in the first run.

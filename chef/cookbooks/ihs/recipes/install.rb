@@ -43,14 +43,19 @@ im_install 'ibm_http_server' do
   install_dir node['ihs']['install_dir']
   response_file 'ihs.install.xml'
   offering_id node['ihs']['offering_id']['IHS']
-  offering_version ihs_offering_version_root
-  profile_id 'IBM HTTP Server for WebSphere Application Server'
+  offering_version make_offering_version(node['ihs']['version'])
+  profile_id node['ihs']['profile_id']['IHS']
   feature_list ihsfeature_list
   im_install_mode node['ihs']['install_mode']
   user ihs_user
   group ihs_group
   im_repo_user node['ibm']['im_repo_user']
   im_repo_nonsecureMode 'true'
+  install_java node['ihs']['java']['install']
+  java_offering_id node['ihs']['java']['offering_id']
+  java_offering_version node['ihs']['java']['version'].split('.').slice(0..3).join('.') # only keep first three numbers
+  # java_offering_version make_offering_version(node['ihs']['java']['version'])
+  # java_feature_list 'com.ibm.sdk.8'
   repo_nonsecureMode 'true'
   action [:install_im, :upgrade_im, :install]
   only_if { ihs_do_install? }

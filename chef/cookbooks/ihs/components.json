@@ -18,6 +18,10 @@
                 },
                 "install_dir": "/opt/IBM/HTTPServer",
                 "install_mode": "admin",
+                "java": {
+                    "legacy": "java8",
+                    "version": "8.0.4.7"
+                },
                 "plugin": {
                     "enabled": "true",
                     "install_dir": "/opt/IBM/WebSphere/Plugins",
@@ -32,6 +36,19 @@
         "displayname": "ihs-wasmode-admin",
         "name": "ihs-wasmode-admin",
         "objectname": "ihs-wasmode-admin",
+        "run_list": [
+            "recipe[ihs::prereq_check]",
+            "recipe[ihs::prereq]",
+            "recipe[ihs::install]",
+            "recipe[ihs::config_httpd_conf]",
+            "recipe[ihs::config_admin_conf]",
+            "recipe[ihs::config_ssl_selfsigned]",
+            "recipe[ihs::config_wasplugin]",
+            "recipe[ihs::service_httpd]",
+            "recipe[ihs::service_admin]",
+            "recipe[ihs::gather_evidence]",
+            "recipe[ihs::cleanup]"
+        ],
         "type": "chef_role"
     },
     {
@@ -53,6 +70,10 @@
                 },
                 "install_dir": "/opt/IBM/HTTPServer",
                 "install_mode": "nonAdmin",
+                "java": {
+                    "legacy": "java8",
+                    "version": "8.0.4.7"
+                },
                 "plugin": {
                     "enabled": "true",
                     "install_dir": "/opt/IBM/WebSphere/Plugins",
@@ -67,6 +88,19 @@
         "displayname": "ihs-wasmode-nonadmin",
         "name": "ihs-wasmode-nonadmin",
         "objectname": "ihs-wasmode-nonadmin",
+        "run_list": [
+            "recipe[ihs::prereq_check]",
+            "recipe[ihs::prereq]",
+            "recipe[ihs::install]",
+            "recipe[ihs::config_httpd_conf]",
+            "recipe[ihs::config_admin_conf]",
+            "recipe[ihs::config_ssl_selfsigned]",
+            "recipe[ihs::config_wasplugin]",
+            "recipe[ihs::service_httpd]",
+            "recipe[ihs::service_admin]",
+            "recipe[ihs::gather_evidence]",
+            "recipe[ihs::cleanup]"
+        ],
         "type": "chef_role"
     }
 ]

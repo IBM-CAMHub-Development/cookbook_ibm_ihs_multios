@@ -6,8 +6,6 @@
 # or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
 ####################################################################### -->
 
-
-
 <agent-input clean="true" temporary="true">
 
 <server>
@@ -15,9 +13,9 @@
 </server>
 
 <install modify='false'>
-<offering id='<%= @OFFERING_ID %>' version='<%= @OFFERING_VERSION %>' profile='<%= @PROFILE_ID %>' features='<%= @FEATURE_LIST %>' installFixes='recommended'/>
-<% if node['ihs']['version'].split('.').first.to_i >= 9 %>
-<offering id='com.ibm.java.jdk.v8' profile='<%= @PROFILE_ID %>' features='com.ibm.sdk.8' installFixes='recommended'/>
+<offering id='<%= @OFFERING_ID %>' profile='<%= @PROFILE_ID %>' version='<%= @OFFERING_VERSION %>' installFixes='recommended'/>
+<% if @INSTALL_JAVA == "true" %>
+<offering id='<%= @JAVA_OFFERING_ID %>' profile='<%= @PROFILE_ID %>' version='<%= @JAVA_OFFERING_VERSION %>' features='<%= @JAVA_FEATURE_LIST %>' installFixes='recommended'/>
 <% end %>
 </install>
 
@@ -25,6 +23,9 @@
 <data key='eclipseLocation' value='<%= @INSTALL_LOCATION %>'/>
 <data key='user.import.profile' value='false'/>
 <data key='cic.selector.nl' value='en'/>
+<% if (@OFFERING_ID.include? "IHS.v85") && (@OFFERING_VERSION.split('.')[2].to_i%1000  >=  11) %>
+<data key='user.wasjava' value='<%= @node['ihs']['java']['legacy'] %>'/>
+<% end %>
 <% if @OFFERING_ID.include? "IHS" %>
 <data key='user.ihs.httpPort' value='<%= node['ihs']['port'].to_i %>'/>
 <data key='user.ihs.allowNonRootSilentInstall' value='true'/>
@@ -45,6 +46,4 @@
 <preference name='com.ibm.cic.agent.ui.displayInternalVersion' value='false'/>
 <preference name='com.ibm.cic.common.core.preferences.eclipseCache' value='<%= @IMSHARED %>'/>
 
-
 </agent-input>
-

@@ -94,14 +94,19 @@ im_install 'ibm_http_server_plugin' do
   install_dir plugin_home
   response_file 'ihs.install.xml'
   offering_id node['ihs']['offering_id']['PLG']
-  offering_version ihs_offering_version_root
-  profile_id 'IBM HTTP Server Plugin for WebSphere Application Server'
+  offering_version make_offering_version(node['ihs']['version'])
+  profile_id node['ihs']['profile_id']['PLG']
   feature_list plgfeature_list
   im_install_mode node['ihs']['install_mode']
   user ihs_user
   group ihs_group
   im_repo_user node['ibm']['im_repo_user']
   im_repo_nonsecureMode 'true'
+  install_java node['ihs']['java']['install']
+  java_offering_id node['ihs']['java']['offering_id']
+  java_offering_version node['ihs']['java']['version'].split('.').slice(0..3).join('.') # only keep first three numbers
+  # java_offering_version make_offering_version(node['ihs']['java']['version'])
+  # java_feature_list 'com.ibm.sdk.8'
   repo_nonsecureMode 'true'
   action :install
   only_if { node['ihs']['plugin']['enabled'].to_s == 'true' }
@@ -130,4 +135,11 @@ end
 execute 'restore ownership on plugin files' do
   command "chown -R #{node['ihs']['os_users']['ihs']['name']}:#{node['ihs']['os_users']['ihs']['gid']} #{plugin_home}/*"
   only_if { ihs_first_run? }
+  only_if { node['ihs']['plugin']['enabled'].to_s == 'true' }
+end
+
+# Fix permissions on log files
+execute 'Fix permissions on log files' do
+  command "chmod g+w #{plugin_home}/logs/#{webserver_name}/*"
+  only_if { File.stat("#{plugin_home}/logs/#{webserver_name}/http_plugin.log").mode & 16 == 16 }
 end

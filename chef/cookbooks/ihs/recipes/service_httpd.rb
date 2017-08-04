@@ -37,7 +37,7 @@ service node['ihs']['service_name'] do
   action :start
   supports [:restart, :status]
   only_if { node['ihs']['config_os_service'].to_s == 'true' }
-  not_if { node['ihs']['admin_server']['enabled'].to_s == 'true' } # not when fronting WAS
+  not_if { node['ihs']['plugin']['enabled'].to_s == 'true' } # not when fronting WAS
 end
 
 # ... or just start it, when:
@@ -55,6 +55,6 @@ ruby_block 'start webserver' do
            end
     run_shell_cmd(cmd, user)
   end
-  only_if { node['ihs']['admin_server']['enabled'].to_s == 'true' || node['ihs']['config_os_service'].to_s != 'true' }
+  only_if { node['ihs']['plugin']['enabled'].to_s == 'true' || node['ihs']['config_os_service'].to_s != 'true' }
   only_if { File.exist?("#{node['ihs']['expand_area']}/ihs_validation.sh") }
 end

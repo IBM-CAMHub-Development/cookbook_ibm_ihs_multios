@@ -19,7 +19,7 @@ node['ihs']['os_users'].each_pair do |_k, u|
   user u['name'] do
     action :create
     comment u['comment']
-    home u['home']
+    home u['home'] unless u['home'] == 'default' # '/home/' + u['name']
     gid u['gid']
     shell u['shell']
     manage_home true

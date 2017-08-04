@@ -53,7 +53,7 @@ default['ihs']['version'] = '9.0.0.2' # ~ip_checker
 # <md>          :default => '/opt/IBM/HTTPServer',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['ihs']['install_dir'] = '/opt/IBM/HTTPServer'
 
@@ -66,7 +66,7 @@ default['ihs']['install_dir'] = '/opt/IBM/HTTPServer'
 # <md>          :default => 'nonAdmin',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['ihs']['install_mode'] = 'nonAdmin'
 
@@ -106,7 +106,7 @@ default['ihs']['config_os_service'] = 'true'
 # <md>          :default => 'ihssrv',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['ihs']['os_users']['ihs']['name'] = 'ihssrv'
 
@@ -119,35 +119,35 @@ default['ihs']['os_users']['ihs']['name'] = 'ihssrv'
 # <md>          :default => 'ihsgrp',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['ihs']['os_users']['ihs']['gid'] = 'ihsgrp'
 
 # <> IHS OS user defined in LDAP
 # <md>attribute 'ihs/os_users/ihs/ldap_user',
 # <md>          :displayname =>  'IHS_Server_OS_User_LDAP',
-# <md>          :description => 'IHS Server OS User LDAP Enabled',
+# <md>          :description => 'IHS Server OS User is defined in LDAP',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
 # <md>          :default => 'false',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['ihs']['os_users']['ihs']['ldap_user'] = 'false'
 
 # <> IHS OS user home directory
 # <md>attribute 'ihs/os_users/ihs/home',
 # <md>          :displayname =>  'IHS_Server_OS_User_HomeDir',
-# <md>          :description => 'IHS Server OS User Home Direcrtory',
+# <md>          :description => 'IHS Server OS User Home Directory',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
-# <md>          :default => '/home/ihssrv',
+# <md>          :default => 'default',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
-default['ihs']['os_users']['ihs']['home'] = '/home/ihssrv'
+default['ihs']['os_users']['ihs']['home'] = 'default'
 
 # <> IHS OS user comment
 # <md>attribute 'ihs/os_users/ihs/shell',
@@ -158,7 +158,7 @@ default['ihs']['os_users']['ihs']['home'] = '/home/ihssrv'
 # <md>          :default => 'IBM HTTP Server OS user',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['ihs']['os_users']['ihs']['comment'] = 'IBM HTTP Server OS user'
 
@@ -171,7 +171,7 @@ default['ihs']['os_users']['ihs']['comment'] = 'IBM HTTP Server OS user'
 # <md>          :default => '/sbin/nologin',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['ihs']['os_users']['ihs']['shell'] = '/sbin/nologin'
 
@@ -187,6 +187,33 @@ default['ihs']['os_users']['ihs']['shell'] = '/sbin/nologin'
 # <md>          :parm_type => 'none',
 # <md>          :secret => 'false'
 default['ihs']['features']['bitness'] = '64'
+
+# <> IHS v9 Java version
+# <md>attribute 'ihs/java/version',
+# <md>          :displayname =>  'IHS v9 Java version',
+# <md>          :description => 'IHS v9 Java version',
+# <md>          :type => 'string',
+# <md>          :required => 'recommended',
+# <md>          :default => '8.0.4.1',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node',
+# <md>          :secret => 'false'
+default['ihs']['java']['version'] = '8.0.3.22'
+
+# <> IHS v85 Java version: starting with IHS v8.5.5.11
+# <md>attribute 'ihs/java/legacy',
+# <md>          :displayname =>  'IHS v85 Java Version',
+# <md>          :description => 'IHS v85 Java Version',
+# <md>          :type => 'string',
+# <md>          :choice => [ 'java6', 'java8' ],
+# <md>          :required => 'recommended',
+# <md>          :default => 'java8',
+# <md>          :selectable => 'false',
+# <md>          :precedence_level => 'node',
+# <md>          :parm_type => 'node',
+# <md>          :secret => 'false'
+default['ihs']['java']['legacy'] = 'java8'
 
 #-------------------------------------------------------------------------------
 # Product configuration
@@ -270,7 +297,7 @@ default['ihs']['server_admin'] = 'you@your.address'
 # <md>          :default => 'remote',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['ihs']['plugin']['enabled'] = 'false'
 
@@ -287,16 +314,16 @@ default['ihs']['plugin']['enabled'] = 'false'
 # <md>          :secret => 'false'
 default['ihs']['plugin']['plugin_install_type'] = 'remote'
 
-# <> WAS connection: webserver name+
+# <> WAS connection: webserver name
 # <md>attribute 'ihs/plugin/was_webserver_name',
 # <md>          :displayname =>  'IHS_Plugin_WEBSRV_Hostname',
 # <md>          :description => 'IHS Plugin WEBSRV_Hostname',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
-# <md>          :default => '',
+# <md>          :default => 'webserver1',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['ihs']['plugin']['was_webserver_name'] = node['fqdn']
 
@@ -335,7 +362,7 @@ default['ihs']['plugin']['dmgr_tag'] = 'DMGR'
 # <md>          :default => '/opt/IBM/WebSphere/Plugins',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['ihs']['plugin']['install_dir'] = File.dirname(node['ihs']['install_dir']) + '/WebSphere/Plugins'
 
@@ -352,7 +379,7 @@ default['ihs']['plugin']['install_dir'] = File.dirname(node['ihs']['install_dir'
 # <md>          :default => 'false',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['ihs']['admin_server']['enabled'] = 'false'
 
@@ -378,7 +405,7 @@ default['ihs']['admin_server']['service_name'] = 'ihsadm' + node['ihs']['version
 # <md>          :default => '8008',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'none',
+# <md>          :parm_type => 'node',
 # <md>          :secret => 'false'
 default['ihs']['admin_server']['port'] = '8008'
 

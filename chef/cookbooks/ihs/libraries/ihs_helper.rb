@@ -92,8 +92,9 @@ module IHSHelper
     byme || byus || byall
   end
 
-  def ihs_offering_version_root
-    vers_arry = node['ihs']['version'].split('.')
+  # 8.5.5.11 -> 8.5.5011
+  def make_offering_version(version)
+    vers_arry = version.split('.')
     fp_vers = vers_arry.pop.to_i
     ml_vers = vers_arry.pop.to_i
     vers_arry.push((ml_vers * 1000 + fp_vers).to_s).join('.')

@@ -24,6 +24,10 @@
         "install_dir": "/opt/IBM/WebSphere/Plugins",
         "was_webserver_name": "webserver1"
       },
+      "java": {
+        "legacy": "java8",
+        "version": "8.0.4.7"
+      },
       "install_dir": "/opt/IBM/HTTPServer",
       "install_mode": "admin",
       "port": "80",

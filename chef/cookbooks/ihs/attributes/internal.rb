@@ -96,6 +96,12 @@ force_default['ihs']['offering_id']['IHS'] = 'com.ibm.websphere.IHS.v' + node['i
 
 force_default['ihs']['offering_id']['PLG'] = 'com.ibm.websphere.PLG.v' + node['ihs']['version'].split('.').first(2).join
 
+force_default['ihs']['profile_id']['IHS'] = 'IBM HTTP Server for WebSphere Application Server v' + node['ihs']['version'].split('.').first(2).join
+
+force_default['ihs']['profile_id']['PLG'] = 'IBM Web Server Plug-ins for IBM WebSphere Application Server v' + node['ihs']['version'].split('.').first(2).join
+
+force_default['ihs']['java']['offering_id'] = 'com.ibm.java.jdk.v' + node['ihs']['java']['version'].split('.').first
+
 # <> IHS Features:
 # NOTE: IHS v9 dropped the arch features
 # NOTE: only arch.32bit OR arch.64bit should be set to true
@@ -126,3 +132,11 @@ force_default['ihs']['plugin']['features'] = {
   'com.ibm.jre.6_32bit' => node['ihs']['ihs_features']['arch.32bit'],
   'com.ibm.jre.6_64bit' => node['ihs']['ihs_features']['arch.64bit']
 }
+
+# Starting with IHS v9, java must be installed explicitely
+force_override['ihs']['java']['install'] = if node['ihs']['version'].split('.').first.to_i > 8
+                                             'true'
+                                           else
+                                             'false'
+                                           end
+
