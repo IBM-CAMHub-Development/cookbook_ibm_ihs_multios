@@ -1,7 +1,7 @@
 {
-  "name": "ihs-wasmode-nonadmin",
-  "display_name": "IHS frontend for WAS, nonAdmin",
-  "description": "IHS frontend for WAS, nonAdmin install mode",
+  "name": "ihs-liberty-nonadmin",
+  "display_name": "IHS frontend for WAS Liberty, nonAdmin",
+  "description": "IHS frontend for WAS Liberty, nonAdmin install mode",
   "json_class": "Chef::Role",
   "default_attributes": {
     "ibm": {
@@ -14,10 +14,7 @@
     },
     "ihs": {
       "admin_server": {
-        "enabled": "true",
-        "password": "",
-        "port": "8008",
-        "username": "ihsadmin"
+        "enabled": "false"
       },
       "plugin": {
         "enabled": "true",
@@ -62,3 +59,4 @@
 
   }
 }
+

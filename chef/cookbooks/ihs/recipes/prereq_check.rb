@@ -61,11 +61,13 @@ if node['ihs']['version'].split('.').first.to_i < 9
   raise "Select either '32' or '64' for bitness parameter" unless ['32', '64'].include? node['ihs']['features']['bitness']
 end
 
+# Validate legacy java version (v855 only, fp11 and higher)
+if node['ihs']['version'].gsub(/\.\d+$/, '') == '8.5.5' && node['ihs']['version'].split('.').last.to_i >= 11
+  raise "Invalid value \'#{node['ihs']['java']['legacy']}\' for node['ihs']['java']['legacy'], acceptable values are \'java6\' and \'java8\'" unless ['java6', 'java8'].include?(node['ihs']['java']['legacy'])
+end
+
 # System must have valid fqdn, or install will silently fail
 raise 'Please ensure hostname -f returns a valid FQDN' if node['fqdn'].nil?
-
-# TODO: Validate plugin install dir; must not be a parent or sub-directory of node['ihs']['install_dir']
-# TODO: Validate platform
 
 # Check Free Space on install_dir
 ibm_cloud_utils_freespace 'check-freespace-install-dir-directory' do

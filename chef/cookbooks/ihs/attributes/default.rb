@@ -297,7 +297,7 @@ default['ihs']['server_admin'] = 'you@your.address'
 # <md>          :default => 'remote',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node',
+# <md>          :parm_type => 'none',
 # <md>          :secret => 'false'
 default['ihs']['plugin']['enabled'] = 'false'
 
@@ -379,7 +379,7 @@ default['ihs']['plugin']['install_dir'] = File.dirname(node['ihs']['install_dir'
 # <md>          :default => 'false',
 # <md>          :selectable => 'false',
 # <md>          :precedence_level => 'node',
-# <md>          :parm_type => 'node',
+# <md>          :parm_type => 'none',
 # <md>          :secret => 'false'
 default['ihs']['admin_server']['enabled'] = 'false'
 

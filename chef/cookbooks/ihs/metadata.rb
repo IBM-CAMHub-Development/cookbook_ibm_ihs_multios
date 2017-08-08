@@ -4,7 +4,7 @@ maintainer_email ''
 license 'Copyright IBM Corp. 2012, 2017'
 description      'Installs/Configures IBM HTTP server'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.1.31'
+version '0.1.33'
 depends          'ibm_cloud_utils'
 depends          'im'
 description <<-EOH
@@ -50,7 +50,7 @@ attribute 'ihs/admin_server/enabled',
           :default => 'false',
           :description => 'IHS Admin Server Enable(true/false)',
           :displayname => 'IHS_Admin_Server_Enable',
-          :parm_type => 'node',
+          :parm_type => 'none',
           :precedence_level => 'node',
           :required => 'recommended',
           :secret => 'false',
@@ -252,7 +252,7 @@ attribute 'ihs/plugin/enabled',
           :default => 'remote',
           :description => 'IHS Plugin Enabled',
           :displayname => 'IHS_Plugin_Enabled',
-          :parm_type => 'node',
+          :parm_type => 'none',
           :precedence_level => 'node',
           :required => 'recommended',
           :secret => 'false',

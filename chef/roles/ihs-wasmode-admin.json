@@ -28,6 +28,13 @@
         "legacy": "java8",
         "version": "8.0.4.7"
       },
+      "os_users": {
+        "ihs": {
+          "name": "ihssrv",
+          "gid": "ihsgrp",
+          "shell": "/sbin/nologin"
+        }
+      },
       "install_dir": "/opt/IBM/HTTPServer",
       "install_mode": "admin",
       "port": "80",
