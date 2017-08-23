@@ -4,7 +4,7 @@ maintainer_email ''
 license 'Copyright IBM Corp. 2012, 2017'
 description      'Installs/Configures IBM HTTP server'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.1.33'
+version '0.1.37'
 depends          'ibm_cloud_utils'
 depends          'im'
 description <<-EOH
@@ -17,6 +17,7 @@ This cookbook installs and configures IBM HTTP Server.
 ## Platforms Support
 * RHEL 6.5+
 * RHEL 7.1+
+* Ubuntu Server 14.04+
 
 ## Use Cases
 * IHS installation via IM LWRP, admin mode
@@ -33,6 +34,7 @@ EOH
 
 supports "RHEL6", ">= 6.5"
 supports "RHEL7"
+supports "ubuntu", ">= 14.04"
 
 
 

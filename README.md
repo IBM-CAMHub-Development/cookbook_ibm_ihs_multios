@@ -10,6 +10,7 @@ This cookbook installs and configures IBM HTTP Server.
 ## Platforms Support
 * RHEL 6.5+
 * RHEL 7.1+
+* Ubuntu Server 14.04+
 
 ## Use Cases
 * IHS installation via IM LWRP, admin mode
@@ -29,6 +30,7 @@ Requirements
 
 * Rhel6 (>= 6.5)
 * Rhel7
+* Ubuntu (>= 14.04)
 
 ### Cookbooks:
 
