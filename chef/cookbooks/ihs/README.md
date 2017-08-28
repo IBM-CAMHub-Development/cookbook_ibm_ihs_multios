@@ -2,21 +2,27 @@ Ihs Cookbook
 ============
 
 ## DESCRIPTION
+
 This cookbook installs and configures IBM HTTP Server.
 
-## Versions
-* IBM IHS V8.5.x, IBM IHS v9.0.x
-
 ## Platforms Support
-* RHEL 6.5+
-* RHEL 7.1+
-* Ubuntu Server 14.04+
+
+* RHEL 6.x
+* RHEL 7.x
+* Ubuntu Server 14.04 or greater
+
+## Versions
+
+* IBM HTTP Server 9.0
+* IBM HTTP Server 8.5.5
 
 ## Use Cases
+
 * IHS installation via IM LWRP, admin mode
 * IHS installation via IM LWRP, nonAdmin mode
 
 ## Platform Pre-Requisites
+
 * Linux YUM Repository - An onsite linux YUM Repsoitory is required.
 
 ## IM Package Repository
@@ -63,92 +69,92 @@ Attributes
   </tr>
   <tr>
     <td><code>node['ihs']['admin_server']['port']</code></td>
-    <td>IHS Admin Server  Port Number</td>
+    <td>IHS Admin Server Port Number</td>
     <td><code>8008</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['admin_server']['server_name']</code></td>
-    <td>IHS Admin Server Docuement Hostname</td>
+    <td>IHS Admin Server fully qualified hostname.</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['admin_server']['service_name']</code></td>
-    <td>IHS Admin Server ServiceName</td>
+    <td>IHS Admin Server Service Name</td>
     <td><code>ihsadm</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['admin_server']['username']</code></td>
-    <td>IHS Admin Server userName</td>
+    <td>IHS Admin Server username</td>
     <td><code>ihsadmin</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['config_os_service']</code></td>
-    <td>IHS Server Config Service</td>
+    <td>Specifies whether to configure IBM HTTP Server as a service.</td>
     <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['document_root']</code></td>
-    <td>IHS Server DocumentRoot</td>
+    <td>Designated directory for holding web pages in IBM HTTP Server.</td>
     <td><code>/opt/IBM/HTTPServer/htdocs</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['features']['bitness']</code></td>
-    <td>IHS Server BIT 64</td>
+    <td>Indicate whether IBM HTTP Server is 64 bit.</td>
     <td><code>64</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['install_dir']</code></td>
-    <td>IHS Installation Directory</td>
+    <td>The directory to install IBM HTTP Server.</td>
     <td><code>/opt/IBM/HTTPServer</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['install_mode']</code></td>
-    <td>IHS Installation Mode</td>
+    <td>The mode of installation for IBM HTTP Server.</td>
     <td><code>nonAdmin</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['java']['legacy']</code></td>
-    <td>IHS v85 Java Version</td>
+    <td>The Java version to be used with IBM HTTP Server version 8.5.5</td>
     <td><code>java8</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['java']['version']</code></td>
-    <td>IHS v9 Java version</td>
+    <td>The Java version to be used with IBM HTTP Server version 9.</td>
     <td><code>8.0.4.1</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_perms']</code></td>
-    <td>IHS File Permissions</td>
+    <td>Operating System permissions on IBM HTTP Server files.</td>
     <td><code>755</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['gid']</code></td>
-    <td>IHS Server OS User GROUP Name</td>
+    <td>The group name for the IBM HTTP Server user.</td>
     <td><code>ihsgrp</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['home']</code></td>
-    <td>IHS Server OS User Home Directory</td>
+    <td>The IHS user home directory.</td>
     <td><code>default</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['ldap_user']</code></td>
-    <td>IHS Server OS User is defined in LDAP</td>
+    <td>Specifies if the IHS user is in LDAP.</td>
     <td><code>false</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['name']</code></td>
-    <td>IHS Server OS User Name</td>
+    <td>The username for IBM HTTP Server</td>
     <td><code>ihssrv</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['shell']</code></td>
-    <td>IHS Server OS User Shell</td>
+    <td>Location of the IBM HTTP Server operating system user shell.</td>
     <td><code>/sbin/nologin</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['plugin']['dmgr_tag']</code></td>
-    <td>IHS Plugin DMGR Tag</td>
+    <td>Tag string identifying the DMGR host.</td>
     <td><code>DMGR</code></td>
   </tr>
   <tr>
@@ -163,12 +169,12 @@ Attributes
   </tr>
   <tr>
     <td><code>node['ihs']['plugin']['plugin_install_type']</code></td>
-    <td>IHS Plugin INstallation Type</td>
+    <td>IHS Plugin Installation Type</td>
     <td><code>remote</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['plugin']['was_hostname']</code></td>
-    <td>IHS Plugin DMGR_Hostname</td>
+    <td>IHS Plugin DMGR Hostname</td>
     <td><code></code></td>
   </tr>
   <tr>
@@ -178,22 +184,22 @@ Attributes
   </tr>
   <tr>
     <td><code>node['ihs']['port']</code></td>
-    <td>IHS Server Port Number</td>
+    <td>The IBM HTTP Server default port for HTTP requests.</td>
     <td><code>80</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['server_admin']</code></td>
-    <td>IHS Server Admin Email Address</td>
+    <td>The email address of the server admin for IBM HTTP Server.</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['server_name']</code></td>
-    <td>IHS Server Admin ServerName</td>
+    <td>Fully qualified name of the server.</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['service_name']</code></td>
-    <td>IHS Server Service Name</td>
+    <td>IHS service name</td>
     <td><code>ihssrv</code></td>
   </tr>
   <tr>
@@ -223,7 +229,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['ihs']['version']</code></td>
-    <td>IHS Installation Version</td>
+    <td>The version of IHS to install.</td>
     <td><code></code></td>
   </tr>
 </table>
