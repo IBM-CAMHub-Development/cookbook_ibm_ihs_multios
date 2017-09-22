@@ -1,13 +1,13 @@
 {
     "ihs": {
         "software": {
-            "name": "IBM HTTPd Server ",
+            "name": "IBM HTTP Server ",
             "major_version": [
                 "8.5.5",
                 "9.0.0"
             ],
             "minor_version": [
-                "8.5.5.11",
+                "8.5.5.12",
                 "9.0.0.4"
             ],
             "platforms": [
@@ -40,7 +40,7 @@
             "8.5.5": {
                 "X86_64": {
                     "repo_root": "IM Repository File",
-                    "file": ["com.ibm.websphere.IHS.v85_8.5.5011.20161206_1434", "com.ibm.websphere.PLG.v85_8.5.5011.20161206_1434"]
+                    "file": ["com.ibm.websphere.IHS.v85_8.5.5012.20170627_1018", "com.ibm.websphere.PLG.v85_8.5.5012.20170627_1018"]
                 }
             },
             "9.0.0": {

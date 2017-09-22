@@ -54,62 +54,62 @@ Attributes
   </tr>
   <tr>
     <td><code>node['ihs']['admin_server']['document_root']</code></td>
-    <td>IHS Admin Server Docuement Root</td>
+    <td>IBM HTTP Server Admin Server Docuement Root</td>
     <td><code>/opt/IBM/HTTPServer/docroot</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['admin_server']['enabled']</code></td>
-    <td>IHS Admin Server Enable(true/false)</td>
+    <td>IBM HTTP Server Admin Server Enable(true/false)</td>
     <td><code>false</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['admin_server']['password']</code></td>
-    <td>IHS Admin Server Password</td>
+    <td>IBM HTTP Server Admin Server Password</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['admin_server']['port']</code></td>
-    <td>IHS Admin Server Port Number</td>
+    <td>IBM HTTP Server Admin Server Port Number</td>
     <td><code>8008</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['admin_server']['server_name']</code></td>
-    <td>IHS Admin Server fully qualified hostname.</td>
+    <td>IBM HTTP Server Admin Server fully qualified hostname</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['admin_server']['service_name']</code></td>
-    <td>IHS Admin Server Service Name</td>
+    <td>IBM HTTP Server Admin Server Service Name</td>
     <td><code>ihsadm</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['admin_server']['username']</code></td>
-    <td>IHS Admin Server username</td>
+    <td>IBM HTTP Server Admin Server username</td>
     <td><code>ihsadmin</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['config_os_service']</code></td>
-    <td>Specifies whether to configure IBM HTTP Server as a service.</td>
+    <td>Specifies whether to configure IBM HTTP Server as a service</td>
     <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['document_root']</code></td>
-    <td>Designated directory for holding web pages in IBM HTTP Server.</td>
+    <td>Designated directory for holding web pages in IBM HTTP Server</td>
     <td><code>/opt/IBM/HTTPServer/htdocs</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['features']['bitness']</code></td>
-    <td>Indicate whether IBM HTTP Server is 64 bit.</td>
+    <td>Indicate whether IBM HTTP Server is 64 bit</td>
     <td><code>64</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['install_dir']</code></td>
-    <td>The directory to install IBM HTTP Server.</td>
+    <td>The directory to install IBM HTTP Server</td>
     <td><code>/opt/IBM/HTTPServer</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['install_mode']</code></td>
-    <td>The mode of installation for IBM HTTP Server.</td>
+    <td>The mode of installation for IBM HTTP Server</td>
     <td><code>nonAdmin</code></td>
   </tr>
   <tr>
@@ -119,27 +119,27 @@ Attributes
   </tr>
   <tr>
     <td><code>node['ihs']['java']['version']</code></td>
-    <td>The Java version to be used with IBM HTTP Server version 9.</td>
-    <td><code>8.0.4.1</code></td>
+    <td>The Java version to be used with IBM HTTP Server</td>
+    <td><code>8.0.4.70</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_perms']</code></td>
-    <td>Operating System permissions on IBM HTTP Server files.</td>
+    <td>The operating system permissions on IBM HTTP Server files</td>
     <td><code>755</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['gid']</code></td>
-    <td>The group name for the IBM HTTP Server user.</td>
+    <td>The group name for the IBM HTTP Server user</td>
     <td><code>ihsgrp</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['home']</code></td>
-    <td>The IHS user home directory.</td>
+    <td>The IBM HTTP Server user home directory</td>
     <td><code>default</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['ldap_user']</code></td>
-    <td>Specifies if the IHS user is in LDAP.</td>
+    <td>Specifies if the IBM HTTP Server user is in LDAP</td>
     <td><code>false</code></td>
   </tr>
   <tr>
@@ -149,88 +149,88 @@ Attributes
   </tr>
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['shell']</code></td>
-    <td>Location of the IBM HTTP Server operating system user shell.</td>
+    <td>Location of the IBM HTTP Server operating system user shell</td>
     <td><code>/sbin/nologin</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['plugin']['dmgr_tag']</code></td>
-    <td>Tag string identifying the DMGR host.</td>
+    <td>The tag string identifying the DMGR host</td>
     <td><code>DMGR</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['plugin']['enabled']</code></td>
-    <td>IHS Plugin Enabled</td>
+    <td>IBM HTTP Server Plugin Enabled</td>
     <td><code>remote</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['plugin']['install_dir']</code></td>
-    <td>IHS Plugin Installation Direcrtory</td>
+    <td>IBM HTTP Server Plugin Installation Direcrtory</td>
     <td><code>/opt/IBM/WebSphere/Plugins</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['plugin']['plugin_install_type']</code></td>
-    <td>IHS Plugin Installation Type</td>
+    <td>IBM HTTP Server Plugin Installation Type</td>
     <td><code>remote</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['plugin']['was_hostname']</code></td>
-    <td>IHS Plugin DMGR Hostname</td>
+    <td>IBM HTTP Server plugin DMGR hostname</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['plugin']['was_webserver_name']</code></td>
-    <td>IHS Plugin WEBSRV_Hostname</td>
+    <td>IBM HTTP Server Plugin Hostname, normally the FQDN</td>
     <td><code>webserver1</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['port']</code></td>
-    <td>The IBM HTTP Server default port for HTTP requests.</td>
+    <td>The IBM HTTP Server default port for HTTP requests</td>
     <td><code>80</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['server_admin']</code></td>
-    <td>The email address of the server admin for IBM HTTP Server.</td>
+    <td>The email address of the server admin for IBM HTTP Server</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['server_name']</code></td>
-    <td>Fully qualified name of the server.</td>
+    <td>Fully qualified name of the server</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['service_name']</code></td>
-    <td>IHS service name</td>
+    <td>IBM HTTP Server service name</td>
     <td><code>ihssrv</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['ssl']['cert_label']</code></td>
-    <td>IHS Keystore Label Name</td>
+    <td>IBM HTTP Server keystore label name</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['ssl']['enabled']</code></td>
-    <td>IHS Enable SSL Port</td>
+    <td>IBM HTTP Server Enable SSL Port</td>
     <td><code>false</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['ssl']['keystore']</code></td>
-    <td>IHS Keystore Location</td>
+    <td>IBM HTTP Server Keystore Location</td>
     <td><code>/opt/IBM/HTTPServer/conf/key.kdb</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['ssl']['keystore_password']</code></td>
-    <td>IHS Keystore Password</td>
+    <td>IBM HTTP Server keystore password</td>
     <td><code></code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['ssl']['port']</code></td>
-    <td>IHS SSL Port Number</td>
+    <td>IBM HTTP Server SSL Port Number</td>
     <td><code>443</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['version']</code></td>
-    <td>The version of IHS to install.</td>
-    <td><code></code></td>
+    <td>The version of IBM HTTP Server to install</td>
+    <td><code>9.0.0.4</code></td>
   </tr>
 </table>
 

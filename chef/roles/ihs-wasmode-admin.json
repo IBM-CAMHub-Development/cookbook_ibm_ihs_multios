@@ -26,7 +26,7 @@
       },
       "java": {
         "legacy": "java8",
-        "version": "8.0.4.7"
+        "version": "8.0.4.70"
       },
       "os_users": {
         "ihs": {
@@ -38,7 +38,7 @@
       "install_dir": "/opt/IBM/HTTPServer",
       "install_mode": "admin",
       "port": "80",
-      "version": "9.0.0.2"
+      "version": "9.0.0.4"
     }
   },
   "override_attributes": {
@@ -62,4 +62,3 @@
 
   }
 }
-
