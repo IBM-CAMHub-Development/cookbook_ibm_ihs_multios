@@ -45,6 +45,11 @@ end
     not_if { ihs_installed? }
   end
 end
+# Refresh Apt before attempting to install packages.
+case node['platform_family']
+when "debian"
+  apt_update 'update'
+end
 
 # Install prerequisites
 package 'install_prerequisites' do

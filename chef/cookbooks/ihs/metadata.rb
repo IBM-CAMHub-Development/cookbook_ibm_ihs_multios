@@ -4,7 +4,7 @@ maintainer_email ''
 license 'Copyright IBM Corp. 2012, 2017'
 description      'Installs/Configures IBM HTTP server'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.1.43'
+version '0.1.44'
 depends          'ibm_cloud_utils'
 depends          'im'
 description <<-EOH
