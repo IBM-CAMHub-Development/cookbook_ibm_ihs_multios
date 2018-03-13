@@ -1,13 +1,12 @@
 # Cookbook Name:: ihs
 # Recipe:: prereq_check
 #
-# Copyright IBM Corp. 2016, 2017
+# Copyright IBM Corp. 2016, 2018
 #
 
 # <> Prerequisites recipe (prereq_check.rb)
 # <> Verify required prerequisites, validate input
 
-# Fail if ports < 1024 are supplied with install_mode != admin
 ibm_cloud_utils_hostsfile_update 'update_the_etc_hosts_file' do
   action :updateshosts
 end
@@ -17,18 +16,6 @@ when 'rhel'
   ibm_cloud_utils_enable_awsyumrepo 'enable_aws_extra_yumrepo' do
     action :enable
   end
-end
-
-if node['ihs']['port'].to_i < 1024 && node['ihs']['install_mode'] != 'admin'
-  raise 'Port numbers under 1024 are not allowed in non-admin mode.'
-end
-
-if node['ihs']['admin_server']['port'].to_i < 1024 && node['ihs']['install_mode'] != 'admin' && node['ihs']['admin_server']['enabled'].to_s == 'true'
-  raise 'Port numbers under 1024 are not allowed in non-admin mode.'
-end
-
-if node['ihs']['ssl']['port'].to_i < 1024 && node['ihs']['install_mode'] != 'admin' && node['ihs']['ssl']['enabled'].to_s == 'true'
-  raise 'Port numbers under 1024 are not allowed in non-admin mode.'
 end
 
 # Validate requested IHS version

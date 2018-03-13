@@ -1,7 +1,7 @@
 # Cookbook Name:: ihs
 # Recipe:: config_httpd_conf
 #
-# Copyright IBM Corp. 2016, 2017
+# Copyright IBM Corp. 2016, 2018
 #
 
 # <> Main server configuration recipe (config_httpd_conf.rb)
@@ -9,13 +9,25 @@
 
 version = node['ihs']['version'].split('.').first.to_s
 
+ihs_user = if !node['ihs']['os_users']['ihsrun']['name'].empty?
+             node['ihs']['os_users']['ihsrun']['name'].to_s
+           else
+             node['ihs']['os_users']['ihs']['name'].to_s
+           end
+
+ihs_grp = if !node['ihs']['os_users']['ihsrun']['gid'].empty?
+            node['ihs']['os_users']['ihsrun']['gid'].to_s
+          else
+            node['ihs']['os_users']['ihs']['gid'].to_s
+          end
+
 # Create configuration file from template
 template "#{node['ihs']['install_dir']}/conf/httpd.conf" do
   source "httpd.conf.v#{version}.erb"
   mode node['ihs']['os_perms']
   variables(
-    :USER => node['ihs']['os_users']['ihs']['name'],
-    :GROUP => node['ihs']['os_users']['ihs']['gid'],
+    :USER => ihs_user,
+    :GROUP => ihs_grp,
     :DOCUMENTROOT => node['ihs']['document_root'],
     :SERVERNAME => node['ihs']['server_name'],
     :PORT => node['ihs']['port'],
@@ -36,8 +48,8 @@ end
 # Create document root if it doesn't exist
 directory node['ihs']['document_root'] do
   recursive true
-  owner node['ihs']['os_users']['ihs']['name']
-  group node['ihs']['os_users']['ihs']['gid']
+  owner ihs_user
+  group ihs_grp
   mode node['ihs']['os_perms']
   action :create
 end
@@ -45,7 +57,7 @@ end
 # Copy contents of installed htdocs to docroot, if not default
 execute 'populate_docroot' do
   cwd node['ihs']['document_root']
-  command "cp -fR #{node['ihs']['install_dir']}/htdocs/* . && chown -R  #{node['ihs']['os_users']['ihs']['name']}:#{node['ihs']['os_users']['ihs']['gid']} ."
+  command "cp -fR #{node['ihs']['install_dir']}/htdocs/* . && chown -R #{ihs_user}:#{ihs_grp} ."
   only_if { (Dir.entries(node['ihs']['document_root']) - %w(. ..)).empty? }
 end
 

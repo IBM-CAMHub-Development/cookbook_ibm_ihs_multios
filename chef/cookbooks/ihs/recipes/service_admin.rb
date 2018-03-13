@@ -1,7 +1,7 @@
 # Cookbook Name:: ihs
 # Recipe:: service_admin
 #
-# Copyright IBM Corp. 2016, 2017
+# Copyright IBM Corp. 2016, 2018
 #
 
 # <> Configure admin server recipe (service_admin.rb)
@@ -35,11 +35,7 @@ end
 ruby_block 'start admin server' do
   block do
     cmd = "#{node['ihs']['install_dir']}/bin/adminctl start"
-    user = if node['ihs']['install_mode'] == 'admin'
-             'root'
-           else
-             node['ihs']['os_users']['ihs']['name']
-           end
+    user = 'root'
     run_shell_cmd(cmd, user)
   end
   only_if { ihs_first_run? }

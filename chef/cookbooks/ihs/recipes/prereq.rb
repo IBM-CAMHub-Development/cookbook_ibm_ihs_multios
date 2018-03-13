@@ -1,7 +1,7 @@
 # Cookbook Name:: ihs
 # Recipe:: prereq
 #
-# Copyright IBM Corp. 2016, 2017
+# Copyright IBM Corp. 2016, 2018
 #
 
 # <> Prerequisites recipe (prereq.rb)
@@ -9,11 +9,12 @@
 
 # Create OS users and groups
 node['ihs']['os_users'].each_pair do |_k, u|
-  next if u['name'].nil? || u['name'].to_s == 'nobody' || u['ldap_user'] == 'true'
+  next if u['name'].nil? || u['name'].empty? || u['name'].to_s == 'nobody'
+  next if u['gid'].nil? || u['gid'].empty?
+  next if u['ldap_user'] == 'true'
 
   group u['gid'] do
     action :create
-    not_if { u['gid'].empty? }
   end
 
   user u['name'] do
@@ -57,6 +58,12 @@ package 'install_prerequisites' do
   package_name node['ihs']['prereqs']
 end
 
+ihs_user = if !node['ihs']['os_users']['ihsrun']['name'].empty?
+             node['ihs']['os_users']['ihsrun']['name'].to_s
+           else
+             node['ihs']['os_users']['ihs']['name'].to_s
+           end
+
 # Prepare validation script, only in the first run
 template "#{node['ihs']['expand_area']}/ihs_validation.sh" do
   source 'ihs_validation.sh.erb'
@@ -66,7 +73,7 @@ template "#{node['ihs']['expand_area']}/ihs_validation.sh" do
     :EVIDENCE_LOG => "#{cookbook_name}-#{node['hostname']}.log",
     :INSTALL_MODE => node['ihs']['install_mode'],
     :INSTALL_DIR => node['ihs']['install_dir'],
-    :IHS_USER => node['ihs']['os_users']['ihs']['name'],
+    :IHS_USER => ihs_user,
     :IHS_PORT => node['ihs']['port'],
     :SSL_ENABLED => node['ihs']['ssl']['enabled'],
     :SSL_PORT => node['ihs']['ssl']['port'],

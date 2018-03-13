@@ -1,6 +1,5 @@
 {
   "name": "ihs-wasmode-admin",
-  "display_name": "IHS frontend for WAS, admin",
   "description": "IHS frontend for WAS, admin install mode",
   "json_class": "Chef::Role",
   "default_attributes": {
@@ -26,7 +25,7 @@
       },
       "java": {
         "legacy": "java8",
-        "version": "8.0.4.70"
+        "version": "8.0.50.7"
       },
       "os_users": {
         "ihs": {
@@ -38,7 +37,7 @@
       "install_dir": "/opt/IBM/HTTPServer",
       "install_mode": "admin",
       "port": "80",
-      "version": "9.0.0.4"
+      "version": "9.0.0.6"
     }
   },
   "override_attributes": {

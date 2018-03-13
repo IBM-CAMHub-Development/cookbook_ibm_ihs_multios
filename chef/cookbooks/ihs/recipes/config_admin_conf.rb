@@ -1,7 +1,7 @@
 # Cookbook Name:: ihs
 # Recipe:: config_admin_conf
 #
-# Copyright IBM Corp. 2016, 2017
+# Copyright IBM Corp. 2016, 2018
 #
 
 # <> Configure admin server recipe (config_admin_conf.rb)
@@ -14,6 +14,18 @@ version = node['ihs']['version'].split('.').first.to_s
 chef_vault = node['ihs']['vault']['name']
 encrypted_id = node['ihs']['vault']['encrypted_id']
 admin_user = node['ihs']['admin_server']['username']
+
+ihs_user = if !node['ihs']['os_users']['ihsrun']['name'].empty?
+             node['ihs']['os_users']['ihsrun']['name'].to_s
+           else
+             node['ihs']['os_users']['ihs']['name'].to_s
+           end
+
+ihs_grp = if !node['ihs']['os_users']['ihsrun']['gid'].empty?
+            node['ihs']['os_users']['ihsrun']['gid'].to_s
+          else
+            node['ihs']['os_users']['ihs']['gid'].to_s
+          end
 
 # Admin server needs write access to conf dir
 execute 'set ownership on conf dir' do
@@ -44,8 +56,8 @@ template "#{install_dir}/conf/admin.conf" do
   source "admin.conf.v#{version}.erb"
   mode node['ihs']['os_perms']
   variables(
-    :ADMINUSER => node['ihs']['os_users']['ihs']['name'],
-    :ADMINGROUP => node['ihs']['os_users']['ihs']['gid'],
+    :ADMINUSER => ihs_user,
+    :ADMINGROUP => ihs_grp,
     :ADMINDOCROOT => node['ihs']['admin_server']['document_root'],
     :SERVERNAME => node['ihs']['admin_server']['server_name'],
     :ADMINPORT => node['ihs']['admin_server']['port'],

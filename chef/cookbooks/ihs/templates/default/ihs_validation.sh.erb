@@ -40,17 +40,6 @@ ge_info "Verifying IHS runs from <%= @INSTALL_DIR %> as <%= @IHS_USER %>"
   ge_info "Process running under user '<%= @IHS_USER %>' from directory '<%= @INSTALL_DIR %>'" || \
   ge_fail "Process is not running under prescribed user '<%= @IHS_USER %>'."
 
-<% if @INSTALL_MODE != 'admin' %>
-# In nonAdmin mode no httpd process should run under root
-ge_info "Verifying parent IHS process runs from <%= @INSTALL_DIR %> as <%= @IHS_USER %> in nonAdmin install mode"
-/bin/ps axo user:12,pid,cmd | grep -v grep | \
-  grep -w <%= @INSTALL_DIR %>/bin/httpd | \
-  awk '{ print $1 }' | \
-  grep -w "^root" && \
-  ge_fail "httpd running as root is not expected in nonAdmin installations." || \
-  ge_info "No httpd proccess running as root (nonAdmin install mode)."
-<% end %>
-
 # Verify httpd is running on prescribed web access port
 ge_info "Verifying IHS with PID ${IHSPID} listens on port <%= @IHS_PORT%>"
 ss -elpn  | \

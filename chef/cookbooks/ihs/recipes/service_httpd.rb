@@ -1,7 +1,7 @@
 # Cookbook Name:: ihs
 # Recipe:: service_httpd
 #
-# Copyright IBM Corp. 2016, 2017
+# Copyright IBM Corp. 2016, 2018
 #
 
 # <> Configure web server recipe (service_httpd.rb)
@@ -48,11 +48,7 @@ end
 ruby_block 'start webserver' do
   block do
     cmd = "#{node['ihs']['install_dir']}/bin/apachectl start"
-    user = if node['ihs']['install_mode'] == 'admin'
-             'root'
-           else
-             node['ihs']['os_users']['ihs']['name']
-           end
+    user = 'root'
     run_shell_cmd(cmd, user)
   end
   only_if { node['ihs']['plugin']['enabled'].to_s == 'true' || node['ihs']['config_os_service'].to_s != 'true' }

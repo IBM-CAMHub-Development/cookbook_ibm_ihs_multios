@@ -120,12 +120,17 @@ Attributes
   <tr>
     <td><code>node['ihs']['java']['version']</code></td>
     <td>The Java version to be used with IBM HTTP Server</td>
-    <td><code>8.0.4.70</code></td>
+    <td><code>8.0.50.7</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_perms']</code></td>
     <td>The operating system permissions on IBM HTTP Server files</td>
     <td><code>755</code></td>
+  </tr>
+  <tr>
+    <td><code>node['ihs']['os_users']['ihs']['comment']</code></td>
+    <td>A comment associated with the IBM HTTP Server</td>
+    <td><code>IBM HTTP Server OS user</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['gid']</code></td>
@@ -150,6 +155,31 @@ Attributes
   <tr>
     <td><code>node['ihs']['os_users']['ihs']['shell']</code></td>
     <td>Location of the IBM HTTP Server operating system user shell</td>
+    <td><code>/sbin/nologin</code></td>
+  </tr>
+  <tr>
+    <td><code>node['ihs']['os_users']['ihsrun']['comment']</code></td>
+    <td>A comment associated with the IBM HTTP Server worker user</td>
+    <td><code>IBM HTTP Server OS worker user</code></td>
+  </tr>
+  <tr>
+    <td><code>node['ihs']['os_users']['ihsrun']['gid']</code></td>
+    <td>The group name for the IBM HTTP Server worker user</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['ihs']['os_users']['ihsrun']['home']</code></td>
+    <td>The IBM HTTP Server worker user home directory</td>
+    <td><code>default</code></td>
+  </tr>
+  <tr>
+    <td><code>node['ihs']['os_users']['ihsrun']['name']</code></td>
+    <td>The worker username for IBM HTTP Server</td>
+    <td><code></code></td>
+  </tr>
+  <tr>
+    <td><code>node['ihs']['os_users']['ihsrun']['shell']</code></td>
+    <td>Location of the IBM HTTP Server operating system worker user shell</td>
     <td><code>/sbin/nologin</code></td>
   </tr>
   <tr>
@@ -230,7 +260,7 @@ Attributes
   <tr>
     <td><code>node['ihs']['version']</code></td>
     <td>The version of IBM HTTP Server to install</td>
-    <td><code>9.0.0.4</code></td>
+    <td><code>9.0.0.6</code></td>
   </tr>
 </table>
 
@@ -327,7 +357,7 @@ License and Author
 
 Author:: IBM Corp (<>)
 
-Copyright:: 2017, IBM Corp
+Copyright:: 2018, IBM Corp
 
-License:: Copyright IBM Corp. 2012, 2017
+License:: Copyright IBM Corp. 2012, 2018
 

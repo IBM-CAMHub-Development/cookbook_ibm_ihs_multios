@@ -40,23 +40,7 @@ else
 fi
 RETVAL=0
 
-if [ "${INSTALLMODE}" = "admin" ]; then
-  SUDO='/bin/sh -c '
-else
-  case "$(whoami)" in
-    <%= @IHSUSR %>)
-      echo "Started as <%= @IHSUSR %>"
-      SUDO='/bin/sh -c '
-    ;;
-    root)
-      echo "Started from root, switching to <%= @IHSUSR %>"
-      SUDO='su - <%= @IHSUSR %> -s /bin/sh -c '
-    ;;
-    *)
-      echo "This service can only be controlled by <%= @IHSUSR %> or root."
-    ;;
-  esac
-fi
+SUDO='/bin/sh -c '
 
 start() {
   status && return 0
