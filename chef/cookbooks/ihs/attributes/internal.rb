@@ -1,7 +1,7 @@
 # Cookbook Name:: ihs
 # Recipe:: attributes/internal
 #
-# Copyright IBM Corp. 2016, 2017
+# Copyright IBM Corp. 2016, 2018
 #
 case node['platform_family']
 when 'rhel', 'debian'
@@ -120,8 +120,7 @@ end
 default['ihs']['ihs_features'] = {
   'core.feature' => { 'install' => 'true', 'version_support' => ['8', '9'] },
   'arch.32bit' => { 'install' => arch_32bit, 'version_support' => ['8'] },
-  'arch.64bit' => { 'install' => arch_64bit, 'version_support' => ['8'] }
-}
+  'arch.64bit' => { 'install' => arch_64bit, 'version_support' => ['8'] } }
 
 # <> WAS Plugin features to install
 # NOTE: only com.ibm.jre.6_arch_32bit OR com.ibm.jre.6_arch_64bit should be set to true
@@ -130,8 +129,7 @@ default['ihs']['ihs_features'] = {
 force_default['ihs']['plugin']['features'] = {
   'core.feature' => node['ihs']['ihs_features']['core.feature'],
   'com.ibm.jre.6_32bit' => node['ihs']['ihs_features']['arch.32bit'],
-  'com.ibm.jre.6_64bit' => node['ihs']['ihs_features']['arch.64bit']
-}
+  'com.ibm.jre.6_64bit' => node['ihs']['ihs_features']['arch.64bit'] }
 
 # Starting with IHS v9, java must be installed explicitely
 force_override['ihs']['java']['install'] = if node['ihs']['version'].split('.').first.to_i > 8

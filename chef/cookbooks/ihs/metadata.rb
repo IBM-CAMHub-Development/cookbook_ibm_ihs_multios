@@ -2,9 +2,12 @@ name             'ihs'
 maintainer       'IBM Corp'
 maintainer_email ''
 license 'Copyright IBM Corp. 2012, 2018'
+issues_url   'https://github.com/IBM-CAMHub-Open/cookbook_ibm_ihs_multios/issues'
+source_url   'https://github.com/IBM-CAMHub-Open/cookbook_ibm_ihs_multios'
+chef_version '>= 12.5' if respond_to?(:chef_version)
 description      'Installs/Configures IBM HTTP server'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '1.0.2'
+version '2.0.0'
 depends          'ibm_cloud_utils'
 depends          'im'
 description <<-EOH
@@ -38,8 +41,7 @@ EOH
 
 
 
-supports "RHEL6", ">= 6.5"
-supports "RHEL7"
+supports "redhat", ">= 7.3"
 supports "ubuntu", ">= 14.04"
 
 
@@ -193,7 +195,7 @@ attribute 'ihs/java/legacy',
           :default => 'java8',
           :description => 'The Java version to be used with IBM HTTP Server version 8.5.5',
           :displayname => 'IBM HTTP Server v855 Java version',
-          :hidden => 'false',
+          :hidden => 'true',
           :immutable_after_create => 'true',
           :options => ['java6', 'java8'],
           :parm_type => 'node',

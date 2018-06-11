@@ -37,9 +37,13 @@ if ihs_installed?
 end
 
 # Fail if install_dir exists but product is not installed
-unless ihs_installed?
-  if File.exist?(node['ihs']['install_dir'])
-    raise 'Provided installation directory already exists on the macihne, please choose another'
+# 2237 - Remove directory if already exist and product not installed, we assume a previous failed install
+
+if File.exist?(node['ihs']['install_dir'])
+  directory node['ihs']['install_dir'] do
+    recursive true
+    action :delete
+    not_if { ihs_installed? }
   end
 end
 

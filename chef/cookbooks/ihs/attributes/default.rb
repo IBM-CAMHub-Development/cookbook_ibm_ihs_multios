@@ -315,7 +315,7 @@ default['ihs']['java']['version'] = '8.0.50.7'
 # <md>          :immutable_after_create => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node',
-# <md>          :hidden => 'false',
+# <md>          :hidden => 'true',
 # <md>          :secret => 'false'
 default['ihs']['java']['legacy'] = 'java8'
 

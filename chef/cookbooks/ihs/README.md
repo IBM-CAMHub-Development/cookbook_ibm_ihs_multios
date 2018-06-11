@@ -34,8 +34,7 @@ Requirements
 
 ### Platform:
 
-* Rhel6 (>= 6.5)
-* Rhel7
+* Redhat (>= 7.3)
 * Ubuntu (>= 14.04)
 
 ### Cookbooks:

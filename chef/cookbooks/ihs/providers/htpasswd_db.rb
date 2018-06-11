@@ -2,12 +2,9 @@
 # Cookbook Name:: ihs
 # Provider:: htpasswd_db.rb
 #
-# Copyright IBM Corp. 2016, 2017
+# Copyright IBM Corp. 2016, 2018
 #
-
 include IHSHelper
-
-use_inline_resources
 
 # Create htpasswd password file
 def htpasswd_create(htpasswd_path, pwd_db, owner, user, password)
@@ -76,7 +73,6 @@ action :create do
   else
     # pwfile changed, update resource
     htpasswd_create(dir, db, owner, user, password)
-    new_resource.updated_by_last_action(true) 
   end
   
   # Manage permissions
