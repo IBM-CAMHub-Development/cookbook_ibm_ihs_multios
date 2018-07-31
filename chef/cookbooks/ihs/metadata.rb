@@ -7,7 +7,7 @@ source_url   'https://github.com/IBM-CAMHub-Open/cookbook_ibm_ihs_multios'
 chef_version '>= 12.5' if respond_to?(:chef_version)
 description      'Installs/Configures IBM HTTP server'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '2.0.0'
+version '2.0.1'
 depends          'ibm_cloud_utils'
 depends          'im'
 description <<-EOH
@@ -205,7 +205,7 @@ attribute 'ihs/java/legacy',
           :selectable => 'true',
           :type => 'string'
 attribute 'ihs/java/version',
-          :default => '8.0.50.7',
+          :default => '8.0.5.17',
           :description => 'The Java version to be used with IBM HTTP Server',
           :displayname => 'IBM HTTP Server Java version',
           :hidden => 'true',
@@ -541,7 +541,7 @@ attribute 'ihs/ssl/port',
           :selectable => 'true',
           :type => 'string'
 attribute 'ihs/version',
-          :default => '9.0.0.6',
+          :default => '9.0.0.8',
           :description => 'The version of IBM HTTP Server to install',
           :displayname => 'IBM HTTP Server install version',
           :hidden => 'false',

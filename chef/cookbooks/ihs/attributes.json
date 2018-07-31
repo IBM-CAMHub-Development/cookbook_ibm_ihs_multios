@@ -183,7 +183,7 @@
                 "type": "string"
             },
             "version": {
-                "default": "8.0.50.7",
+                "default": "8.0.5.17",
                 "description": "The Java version to be used with IBM HTTP Server",
                 "displayname": "IBM HTTP Server Java version",
                 "hidden": "true",
@@ -558,7 +558,7 @@
             }
         },
         "version": {
-            "default": "9.0.0.6",
+            "default": "9.0.0.8",
             "description": "The version of IBM HTTP Server to install",
             "displayname": "IBM HTTP Server install version",
             "hidden": "false",

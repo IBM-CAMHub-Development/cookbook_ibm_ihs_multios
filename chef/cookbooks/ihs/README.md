@@ -119,7 +119,7 @@ Attributes
   <tr>
     <td><code>node['ihs']['java']['version']</code></td>
     <td>The Java version to be used with IBM HTTP Server</td>
-    <td><code>8.0.50.7</code></td>
+    <td><code>8.0.5.17</code></td>
   </tr>
   <tr>
     <td><code>node['ihs']['os_perms']</code></td>
@@ -259,7 +259,7 @@ Attributes
   <tr>
     <td><code>node['ihs']['version']</code></td>
     <td>The version of IBM HTTP Server to install</td>
-    <td><code>9.0.0.6</code></td>
+    <td><code>9.0.0.8</code></td>
   </tr>
 </table>
 

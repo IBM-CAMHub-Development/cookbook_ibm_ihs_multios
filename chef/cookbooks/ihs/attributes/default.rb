@@ -37,14 +37,14 @@ default['ibm']['im_repo_password'] = ''
 # <md>          :description => 'The version of IBM HTTP Server to install',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
-# <md>          :default => '9.0.0.6',
+# <md>          :default => '9.0.0.8',
 # <md>          :selectable => 'true',
 # <md>          :immutable_after_create => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node',
 # <md>          :hidden => 'false',
 # <md>          :secret => 'false'
-default['ihs']['version'] = '9.0.0.6' # ~ip_checker
+default['ihs']['version'] = '9.0.0.8' # ~ip_checker
 
 # <> Installation location for IBM HTTP Server
 # <md>attribute 'ihs/install_dir',
@@ -294,14 +294,14 @@ default['ihs']['features']['bitness'] = '64'
 # <md>          :description => 'The Java version to be used with IBM HTTP Server',
 # <md>          :type => 'string',
 # <md>          :required => 'recommended',
-# <md>          :default => '8.0.50.7',
+# <md>          :default => '8.0.5.17',
 # <md>          :selectable => 'true',
 # <md>          :immutable_after_create => 'true',
 # <md>          :precedence_level => 'node',
 # <md>          :parm_type => 'node',
 # <md>          :hidden => 'true',
 # <md>          :secret => 'false'
-default['ihs']['java']['version'] = '8.0.50.7'
+default['ihs']['java']['version'] = '8.0.5.17'
 
 # <> IBM HTTP Server v85 Java version: starting with IBM HTTP Server v8.5.5.12
 # <md>attribute 'ihs/java/legacy',
